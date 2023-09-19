@@ -13,31 +13,94 @@ body {
   align-items: center;
   font-family: "Nunito", sans-serif;
   padding: 40px;
-  background-color: rgb(211, 210, 231);
+  background: rgb(54,205,52);
+  background: linear-gradient(90deg, rgba(54,205,52,1) 19%, rgba(158,196,47,1) 85%, rgba(182,189,43,1) 100%);
 }
 
-img {
-  width: 130px;
+.title-encuesta{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 2px;
+  font-variant: small-caps;
+  font-weight: 500;
 }
 
 .form-encuesta {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: #ffffff;
-  padding: 0px 50px;
+  padding: 0px 100px;
   border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.384);
+  gap: 10px;
+  width: 80%;
 }
 
-.title-h2 {
-  padding: 20px 0px;
+.title-h4 {
+  margin: 12px 0px;
   padding-top: 25px;
-  color: #015092;
+  color: white;
+  letter-spacing: 1.5px;
+  font-style: oblique;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.397);
 }
 
-.seccion {
+.campo-contein{
+  display: flex;
+  gap: 20px;
+}
+
+.campo{
+  color: white;
+  white-space: nowrap;
+}
+
+.seccion-2 {
   display: flex;
   justify-content: start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.seccion, .seccion-2{
+  margin-top: 20px
+}
+
+.form-group{
+ width: 100%;
+}
+
+.input-enter{
+  width: 100%;
+  max-width: 100%;
+}
+
+.input-name{
+  width: 100%;
+  max-width: 100%;
+}
+
+.input-enter, .input-name{
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid rgba(117, 161, 105, 0.74);
+}
+
+.input-enter:focus-visible, .input-name:focus-visible{
+  outline: none;
+}
+
+.input-enter:focus-visible, .input-name:focus-visible{
+  border: 2px solid rgb(91, 111, 226);
+}
+
+.seccion-flex{
+  display: flex;
+  margin-left: -20px;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -45,16 +108,24 @@ img {
   display: flex;
   align-items: start;
   flex-direction: row;
-  gap: 10px;
+}
+
+.tipo{
+  background-color: #1d2424b6;
+  padding: 8px 35px;
+  border-radius: 5px;
+  color: white;
 }
 
 .check-type {
+  position: relative;
+  top: 12px;
+  left: 28px;
   appearance: none;
-  background-color: #d9e6e7;
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   border-radius: 50px;
-  border: 1px solid rgba(0, 0, 0, 0.205);
+  border: 1px solid rgba(255, 249, 249, 0.205);
 }
 
 .check-type:checked {

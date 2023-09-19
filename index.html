@@ -1,255 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Encuesta suscripcines</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/styles.css" />
-    <script defer src="encuesta.js"></script>
-  </head>
 
-  <body>
-    <form id="encuestaForm" class="form-encuesta">
-      <div>
-        <h3 class="title-h2">Datos Personales</h3>
-        <div class="seccion">
-          <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required />
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encuesta suscripcines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="encuesta.js"></script>
+</head>
 
-          <div class="form-group">
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" required />
-          </div>
-
-          <div class="form-group">
-            <label for="celular">Celular:</label>
-            <input type="number" id="celular" name="celular" required />
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <h3 class="title-h2">Tipo de producto</h3>
-
-        <div class="seccion">
-          <div class="contain-check">
-            <input
-              id="protector"
-              class="check-type"
-              type="checkbox"
-              value="Protector"
-              name="tipo"
-              data-seccion="tipo"
-            />
-            <label for="protector">Protectores</label>
-          </div>
-
-          <div class="contain-check">
-            <input
-              id="toallas"
-              class="check-type"
-              type="checkbox"
-              value="Toalla"
-              name="tipo"
-              data-seccion="tipo"
-            />
-            <label for="toallas">Toallas</label>
-          </div>
-
-          <div class="contain-check">
-            <input
-              id="apositos"
-              class="check-type"
-              type="checkbox"
-              value="Apósito"
-              name="tipo"
-              data-seccion="tipo"
-            />
-            <label for="apositos">Apósitos</label>
-          </div>
-
-          <div class="contain-check">
-            <input
-              id="panales"
-              class="check-type"
-              type="checkbox"
-              id="masc"
-              value="Panal"
-              name="tipo"
-              data-seccion="tipo"
-            />
-            <label for="panales">Pañales</label>
-          </div>
-
-          <div class="contain-check">
-            <input
-              id="r-interior-desct"
-              class="check-type"
-              type="checkbox"
-              value="Ropa Interior Descartable"
-              name="tipo"
-              data-seccion="tipo"
-            />
-            <label for="r-interior-desct">Ropa Interior Descartable</label>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <h3 class="title-h2">Género</h3>
-
-        <div class="seccion">
-          <div class="contain-check">
-            <input
-              id="fem"
-              class="check-type"
-              type="checkbox"
-              value="FEMENINO"
-              name="genero"
-              data-seccion="genero"
-            />
-            <label for="fem"
-              ><img src="src/icons/fem.png" alt="femenino"
-            /></label>
-          </div>
-
-          <div class="contain-check">
-            <input
-              id="masc"
-              class="check-type"
-              type="checkbox"
-              value="MASCULINO"
-              name="genero"
-              data-seccion="genero"
-            />
-            <label for="masc"
-              ><img src="src/icons/masc.png" alt="masculino"
-            /></label>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <h3 class="title-h2">Nivel de Incontinencia</h3>
-
-        <div class="seccion">
-          <div class="contain-check">
-            <input
-              id="leve"
-              class="check-type"
-              type="checkbox"
-              value="Leve"
-              name="incontinencia"
-              data-seccion="incontinencia"
-            />
-            <label for="leve"
-              ><img src="src/icons/leve.png" alt="absorción baja"
-            /></label>
-          </div>
-
-          <div class="contain-check">
-            <input
-              id="mod"
-              class="check-type"
-              type="checkbox"
-              value="Moderada"
-              name="incontinencia"
-              data-seccion="incontinencia"
-            />
-            <label for="mod"
-              ><img src="src/icons/moderada.png" alt="absorción media"
-            /></label>
-          </div>
-
-          <div class="contain-check">
-            <input
-              id="fuerte"
-              class="check-type"
-              type="checkbox"
-              value="Fuerte"
-              name="incontinencia"
-              data-seccion="incontinencia"
-            />
-            <label for="fuerte"
-              ><img src="src/icons/alta.png" alt="absorción alta"
-            /></label>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <h3 class="title-h2">Talle</h3>
-
-        <div class="seccion">
-          <div class="contain-check">
-            <input
-              id="med"
-              class="check-type"
-              type="checkbox"
-              value="M"
-              name="talle"
-              data-seccion="talle"
-            />
-            <label for="med"
-              ><img src="src/icons/mediano.png" alt="TalleM"
-            /></label>
-          </div>
-
-          <div class="contain-check">
-            <input
-              id="grande"
-              class="check-type"
-              type="checkbox"
-              value="G"
-              name="talle"
-              data-seccion="talle"
-            />
-            <label for="grande"
-              ><img src="src/icons/grande.png" alt="TalleG"
-            /></label>
-          </div>
-
-          <div class="contain-check">
-            <input
-              id="xgrande"
-              class="check-type"
-              type="checkbox"
-              value="XG"
-              name="talle"
-              data-seccion="talle"
-            />
-            <label for="xgrande"
-              ><img src="src/icons/extra-grande.png" alt="TalleXG"
-            /></label>
-          </div>
-        </div>
-      </div>
-
-      <div class="cont-btn">
-        <button id="enviarBtn" type="submit">CONSULTAR</button>
-      </div>
-
-      <div id="error"></div>
-    </form>
-
-    <div id="resultado">
-      <h2>Producto Recomendado:</h2>
-      <div id="productoRecomendado"></div>
-
-      <button id="home"><a href="/index.html">volver</a></button>
+<body>
+  <form id="encuestaForm" class="form-encuesta">
+    <div>
+      <h2 class="title-encuesta">ENCUESTA DE SATIFACCIÓN</h2>
     </div>
-  </body>
+   
+    <div>
+      <h4 class="title-h4">DATOS PERSONALES</h4>
+
+      <div class="seccion-2">
+        <div class="campo-contein">
+          <span class="campo">Nombre completo</span>
+          <div class="form-group">
+            <input class="input-name" type="text" id="nombre" name="nombre" placeholder="Nombre" required />
+          </div>
+
+          <div class="form-group">
+            <input class="input-name" type="text" id="apellido" name="apellido" placeholder="Apellido" required />
+          </div>
+        </div>
+
+        <div class="campo-contein">
+          <span class="campo">Número de celular</span>
+          <div class="form-group">
+            <input class="input-enter" type="number" id="celular" name="celular" placeholder="Ejemplo: 1163589596" required />
+          </div>
+        </div>
+
+        <div class="campo-contein">
+          <span class="campo">Correo electrónico</span>
+          <div class="form-group">
+            <input class="input-enter" type="email" id="email" name="email" placeholder="usuario@ejemplo.com" required />
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div>
+      <h4 class="title-h4">TIPO DE PRODUCTO</h4>
+
+      <div class="seccion seccion-flex">
+        <div class="contain-check">
+          <input id="protector" class="check-type" type="checkbox" value="Protector" name="tipo" data-seccion="tipo" />
+          <label class="tipo" for="protector">Protectores</label>
+        </div>
+
+        <div class="contain-check">
+          <input id="toallas" class="check-type" type="checkbox" value="Toalla" name="tipo" data-seccion="tipo" />
+          <label class="tipo" for="toallas">Toallas</label>
+        </div>
+
+        <div class="contain-check">
+          <input id="apositos" class="check-type" type="checkbox" value="Apósito" name="tipo" data-seccion="tipo" />
+          <label class="tipo" for="apositos">Apósitos</label>
+        </div>
+
+        <div class="contain-check">
+          <input id="panales" class="check-type" type="checkbox" id="masc" value="Panal" name="tipo"
+            data-seccion="tipo" />
+          <label class="tipo" for="panales">Pañales</label>
+        </div>
+
+        <div class="contain-check">
+          <input id="r-interior-desct" class="check-type" type="checkbox" value="Ropa Interior Descartable" name="tipo"
+            data-seccion="tipo" />
+          <label class="tipo" for="r-interior-desct">Ropa Interior Descartable</label>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="title-h4">GÉNERO</h4>
+
+      <div class="seccion seccion-flex">
+        <div class="contain-check">
+          <input id="fem" class="check-type" type="checkbox" value="FEMENINO" name="genero" data-seccion="genero" />
+          <label class="tipo" for="fem">Femenino</label>
+        </div>
+
+        <div class="contain-check">
+          <input id="masc" class="check-type" type="checkbox" value="MASCULINO" name="genero" data-seccion="genero" />
+          <label class="tipo" for="masc">Masculino</label>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="title-h4">NIVEL DE INCONTINENCIA</h4>
+
+      <div class="seccion seccion-flex">
+        <div class="contain-check">
+          <input id="leve" class="check-type" type="checkbox" value="Leve" name="incontinencia"
+            data-seccion="incontinencia" />
+          <label class="tipo" for="leve">Leve</label>
+        </div>
+
+        <div class="contain-check">
+          <input id="mod" class="check-type" type="checkbox" value="Moderada" name="incontinencia"
+            data-seccion="incontinencia" />
+          <label class="tipo" for="mod">Moderada</label>
+        </div>
+
+        <div class="contain-check">
+          <input id="fuerte" class="check-type" type="checkbox" value="Fuerte" name="incontinencia"
+            data-seccion="incontinencia" />
+          <label class="tipo" for="fuerte">Fuerte</label>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="title-h4">TALLE</h4>
+
+      <div class="seccion seccion-flex">
+        <div class="contain-check">
+          <input id="med" class="check-type" type="checkbox" value="M" name="talle" data-seccion="talle" />
+          <label class="tipo" for="med">P/M</label>
+        </div>
+
+        <div class="contain-check">
+          <input id="grande" class="check-type" type="checkbox" value="G" name="talle" data-seccion="talle" />
+          <label class="tipo" for="grande">M/G</label>
+        </div>
+
+        <div class="contain-check">
+          <input id="xgrande" class="check-type" type="checkbox" value="XG" name="talle" data-seccion="talle" />
+          <label class="tipo" for="xgrande">G/XG</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="cont-btn">
+      <button id="enviarBtn" type="submit">CONSULTAR</button>
+    </div>
+
+    <div id="error"></div>
+  </form>
+
+  <div id="resultado">
+    <h2>Producto Recomendado:</h2>
+    <div id="productoRecomendado"></div>
+
+    <button id="home"><a href="/index.html">volver</a></button>
+  </div>
+</body>
+
 </html>
