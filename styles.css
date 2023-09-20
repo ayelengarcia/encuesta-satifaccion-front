@@ -12,9 +12,29 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Nunito", sans-serif;
-  padding: 40px;
   background: rgb(54,205,52);
   background: linear-gradient(90deg, rgba(54,205,52,1) 19%, rgba(158,196,47,1) 85%, rgba(182,189,43,1) 100%);
+  margin-top: 90px;
+}
+
+.header{
+  position: fixed;
+  top: 0px;
+  height: 80px;
+  width: 100%;
+  background-color: #f1f2fa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+.inicio-h4{
+  color:#0a5a9c;
+}
+
+.logo-central{
+  width: 150px;
 }
 
 .title-encuesta{
@@ -25,32 +45,34 @@ body {
   letter-spacing: 2px;
   font-variant: small-caps;
   font-weight: 500;
+  font-size: 1.1rem;
 }
 
 .form-encuesta {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 0px 100px;
+  padding: 0px 30px;
   border-radius: 15px;
   background-color: rgba(0, 0, 0, 0.384);
-  gap: 10px;
-  width: 80%;
+  margin: 25px 15px;
 }
 
 .title-h4 {
-  margin: 12px 0px;
+  margin: 5px 0px;
   padding-top: 25px;
   color: white;
   letter-spacing: 1.5px;
   font-style: oblique;
   font-weight: 400;
   border-bottom: 1px solid rgba(255, 255, 255, 0.397);
+  font-size: .8rem;
 }
 
 .campo-contein{
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .campo{
@@ -99,7 +121,6 @@ body {
 
 .seccion-flex{
   display: flex;
-  margin-left: -20px;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -108,11 +129,12 @@ body {
   display: flex;
   align-items: start;
   flex-direction: row;
+  margin-left: -20px;
 }
 
 .tipo{
   background-color: #1d2424b6;
-  padding: 8px 35px;
+  padding: 8px 20px 8px 35px;
   border-radius: 5px;
   color: white;
 }
@@ -156,6 +178,10 @@ body {
 
 #error {
   color: red;
+  display: flex;
+  justify-content: center;
+  margin-top: -10px;
+  padding-bottom: 10px;
 }
 
 .d-flex {
@@ -202,4 +228,75 @@ td {
 #descargar {
   position: absolute;
   bottom: 0px;
+}
+
+.footer{
+  width: 100%;
+  background-color: #f1f2fa;
+  color: grey;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  align-items: center;
+  gap: 10px;
+}
+
+.copy{
+  font-size: .8rem;
+}
+
+/* Scroll */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(174, 216, 57);
+}
+::-webkit-scrollbar-thumb {
+  background:rgba(2, 10, 2, 0.432);
+  border-radius: 10px;
+}
+
+
+@media (min-width: 769px) {
+
+  .form-encuesta {
+    width: 90%;
+    gap: 10px;
+    padding: 0px 50px;
+  }
+
+  .title-encuesta{
+    font-size: 24px;
+  }
+
+  .title-h4 {
+    font-size: 18px;
+  }
+
+  .campo-contein{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+}
+
+@media (min-width: 1366px) {
+  .form-encuesta {
+    width: 80%;
+    padding: 0px 100px;
+  }
+
+}
+
+
+@media (min-width: 1500px) {
+  .form-encuesta {
+    width: 70%;
+    padding: 0px 120px;
+  }
 }
