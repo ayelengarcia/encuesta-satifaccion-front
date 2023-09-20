@@ -32,17 +32,16 @@ function mostrarDatosEnPagina(datos) {
   datos.forEach((dato) => {
     const filaHTML = `
   <tr class="columna">
-    <td class="filaP">${dato.id}</td>
+    <td class="column-small">${dato.id}</td>
     <td>${dato.respuesta.nombre}</td>
     <td>${dato.respuesta.apellido}</td>
-    <td class="filaG">${dato.respuesta.email}</td>
+    <td class="column-email">${dato.respuesta.email}</td>
     <td>${dato.respuesta.celular}</td>
-    <td class="filaG">${dato.producto[0].titulo}</td>
     <td>${dato.producto[0].EAN}</td>
     <td>${dato.respuesta.tipo}</td>
     <td>${dato.respuesta.genero}</td>
     <td>${dato.respuesta.incontinencia}</td>
-    <td class="filaP">${dato.respuesta.talle}</td>
+    <td class="column-small">${dato.respuesta.talle}</td>
   </tr>
 `;
 
