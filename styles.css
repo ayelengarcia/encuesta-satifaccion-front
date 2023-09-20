@@ -14,7 +14,6 @@ body {
   font-family: "Nunito", sans-serif;
   background: rgb(54,205,52);
   background: linear-gradient(90deg, rgba(54,205,52,1) 19%, rgba(158,196,47,1) 85%, rgba(182,189,43,1) 100%);
-  margin-top: 90px;
 }
 
 .header{
@@ -34,7 +33,13 @@ body {
 }
 
 .logo-central{
-  width: 150px;
+  width: 110px;
+}
+
+.logo-central-a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title-encuesta{
@@ -55,7 +60,7 @@ body {
   padding: 0px 30px;
   border-radius: 15px;
   background-color: rgba(0, 0, 0, 0.384);
-  margin: 25px 15px;
+  margin: 110px 10px 30px 10px;
 }
 
 .title-h4 {
@@ -184,6 +189,48 @@ body {
   padding-bottom: 10px;
 }
 
+#resultado{
+  margin: 130px 0px 50px 0px;
+  color: white;
+}
+
+#productoRecomendado{
+  width: 330px;
+  background-color: rgba(0, 0, 0, 0.384);
+  color: white;
+  margin: 60px 0px;
+  border-radius: 10px;
+}
+
+.img-producto{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 330px;
+}
+
+.margen{
+  padding: 10px;
+}
+
+.btn-volver{
+  background: #59af27;
+  color: white;
+  padding: 8px 50px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+
+.btn-volver-a{
+  color: white;
+  text-decoration: none;
+}
+
+.btn-volver:hover {
+  background-color: #0a5a9c;
+  transition: 0.5s;
+}
+
 .d-flex {
   display: flex;
 }
@@ -282,6 +329,19 @@ td {
     flex-direction: row;
     gap: 20px;
   }
+
+  #productoRecomendado{
+    width: 383px;
+  }
+  
+  .img-producto{
+    width: 383px;
+  }
+  
+  .logo-central{
+    width: 150px;
+  }
+  
 
 }
 

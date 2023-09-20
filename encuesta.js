@@ -153,11 +153,11 @@ function mostrarProductoRecomendado(productosFiltrados) {
     const productoRecomendado = productosFiltrados[0];
     const resultadoDiv = document.getElementById("productoRecomendado");
     resultadoDiv.innerHTML = `
-            <h3>${productoRecomendado.titulo}</h3>
-            <p>${productoRecomendado.descripción}</p>
-            <img src="${productoRecomendado.imagen}" alt="${productoRecomendado.titulo}">
-            <p>Marca: ${productoRecomendado.marca}</p>
-            <p>EAN: ${productoRecomendado.EAN}</p>
+            <img class="img-producto" src="${productoRecomendado.imagen}" alt="${productoRecomendado.titulo}">
+            <h3 class="margen">${productoRecomendado.titulo}</h3>
+            <p class="margen">${productoRecomendado.descripción}</p>
+            <p class="margen">Marca: ${productoRecomendado.marca}</p>
+            <p class="margen">EAN: ${productoRecomendado.EAN}</p>
         `;
   } else {
     document.getElementById("productoRecomendado").innerHTML =
