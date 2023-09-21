@@ -238,10 +238,9 @@ body {
 }
 
 .img-producto{
-  min-width: 280px;
+  min-width: 200px;
   max-width: 400px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-radius: 10px;
 }
 
 .description-product{
