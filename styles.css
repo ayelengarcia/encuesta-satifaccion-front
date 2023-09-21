@@ -215,7 +215,7 @@ body {
 }
 
 #resultado{
-  width: 50%;
+  width: 80%;
   margin: 100px 0px 30px 0px;
   padding: 30px 0px ;
   color: white;
@@ -233,10 +233,13 @@ body {
   border-radius: 10px;
   border: 2px solid #2f343a17;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .img-producto{
-  width: 300px;
+  min-width: 280px;
+  max-width: 400px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -400,11 +403,22 @@ td {
     flex-direction: row;
     gap: 20px;
   }
-
-
   
   .logo-central{
     width: 150px;
+  }
+  
+  #productoRecomendado{
+    display: flex;
+    flex-direction: row;
+  }
+
+  #resultado{
+    width: 60%;
+  }
+
+  .img-producto{
+    width: 300px;
   }
   
 
@@ -420,6 +434,10 @@ td {
     padding-right: 50px;
   }
 
+  #resultado{
+    width: 50%;
+  }
+
 }
 
 
@@ -427,5 +445,9 @@ td {
   .form-encuesta {
     width: 70%;
     padding: 0px 130px;
+  }
+
+  #resultado{
+    width: 40%;
   }
 }
