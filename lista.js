@@ -5,7 +5,7 @@ fetch("https://suscripciones-encuesta-back.onrender.com/todo")
     console.log(data);
 
     const datos = data.map((item) => ({
-      ID: item.id,
+      ID: item._id,
       Nombre: item.respuesta.nombre,
       Apellido: item.respuesta.apellido,
       Email: item.respuesta.email,
@@ -32,7 +32,7 @@ function mostrarDatosEnPagina(datos) {
   datos.forEach((dato) => {
     const filaHTML = `
   <tr class="columna">
-    <td class="column-small">${dato.id}</td>
+    <td class="column-small">${dato._id}</td>
     <td>${dato.respuesta.nombre}</td>
     <td>${dato.respuesta.apellido}</td>
     <td class="column-email">${dato.respuesta.email}</td>
@@ -79,5 +79,3 @@ function descargarCSV(data) {
   const btnDescargar = document.getElementById("descargar");
   btnDescargar.appendChild(a);
 }
-
-// 7794626011184;
