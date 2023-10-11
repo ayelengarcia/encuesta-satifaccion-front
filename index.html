@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Encuesta suscripcines</title>
+  <title>HOME</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
@@ -15,163 +15,28 @@
 <body>
 
   <div class="header">
-    <a class="logo-central-a" href="https://www.centraloeste.com.ar/">
-      <img class="logo-central" src="src/icons/centralOeste.png" alt="logo central oeste">
-    </a>
-    
-    <a class="inicio" href="/index.html"><h4 class="inicio-h4">INICIO</h4></a>
+    <div class="msg-top">
+      <p class="text-msg-top">Buenos Aires, Argentina</p>
+    </div>
+    <div class="contenido-header">
+      <a class="logo-central-a" href="https://www.centraloeste.com.ar/">
+        <img class="logo-central" src="src/icons/centralOeste.png" alt="logo central oeste">
+      </a>
+  
+      <a class="inicio" href="/index.html">
+        <h4 class="inicio-h4">INICIO</h4>
+      </a>
+    </div>
   </div>
 
 
-  <form id="encuestaForm" class="form-encuesta">
-    <div>
-      <h2 class="title-encuesta">ENCUESTA DE SATIFACCIÓN</h2>
-    </div>
-   
-    <div>
-      <h4 class="title-h4">DATOS PERSONALES</h4>
+  <div class="container-home">
 
-      <div class="seccion-2">
-        <div class="campo-contein">
-          <span class="campo">Nombre completo</span>
-          <div class="form-group">
-            <input class="input-name" type="text" id="nombre" name="nombre" placeholder="Nombre" required />
-          </div>
+   <div class="buttons-options">
+    <a class="btn-volver" href="/encuesta.html">Conocer mi producto</a>
+    <a class="btn-volver" href="/elegir-producto.html">Ya conozco mi producto</a>
+   </div>
 
-          <div class="form-group">
-            <input class="input-name" type="text" id="apellido" name="apellido" placeholder="Apellido" required />
-          </div>
-        </div>
-
-        <div class="campo-contein">
-          <span class="campo">Número de celular</span>
-          <div class="form-group">
-            <input class="input-enter" type="number" id="celular" name="celular" placeholder="Ejemplo: 1163589596" required />
-          </div>
-        </div>
-
-        <div class="campo-contein">
-          <span class="campo">Correo electrónico</span>
-          <div class="form-group">
-            <input class="input-enter" type="email" id="email" name="email" placeholder="usuario@ejemplo.com" required />
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-
-    <div>
-      <h4 class="title-h4">TIPO DE PRODUCTO</h4>
-
-      <div class="seccion seccion-flex">
-        <div class="contain-check">
-          <input id="protector" class="check-type" type="checkbox" value="Protector" name="tipo" data-seccion="tipo" />
-          <label class="tipo" for="protector">Protectores</label>
-        </div>
-
-        <div class="contain-check">
-          <input id="toallas" class="check-type" type="checkbox" value="Toalla" name="tipo" data-seccion="tipo" />
-          <label class="tipo" for="toallas">Toallas</label>
-        </div>
-
-        <div class="contain-check">
-          <input id="apositos" class="check-type" type="checkbox" value="Aposito" name="tipo" data-seccion="tipo" />
-          <label class="tipo" for="apositos">Apósitos</label>
-        </div>
-
-        <div class="contain-check">
-          <input id="panales" class="check-type" type="checkbox" id="masc" value="Panal" name="tipo"
-            data-seccion="tipo" />
-          <label class="tipo" for="panales">Pañales</label>
-        </div>
-
-        <div class="contain-check">
-          <input id="r-interior-desct" class="check-type" type="checkbox" value="Ropa Interior Descartable" name="tipo"
-            data-seccion="tipo" />
-          <label class="tipo" for="r-interior-desct">Ropa Interior Descartable</label>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <h4 class="title-h4">GÉNERO</h4>
-
-      <div class="seccion seccion-flex">
-        <div class="contain-check">
-          <input id="fem" class="check-type" type="checkbox" value="FEMENINO" name="genero" data-seccion="genero" />
-          <label class="tipo" for="fem">Femenino</label>
-        </div>
-
-        <div class="contain-check">
-          <input id="masc" class="check-type" type="checkbox" value="MASCULINO" name="genero" data-seccion="genero" />
-          <label class="tipo" for="masc">Masculino</label>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <h4 class="title-h4">NIVEL DE INCONTINENCIA</h4>
-
-      <div class="seccion seccion-flex">
-        <div class="contain-check">
-          <input id="leve" class="check-type" type="checkbox" value="Leve" name="incontinencia"
-            data-seccion="incontinencia" />
-          <label class="tipo" for="leve">Leve</label>
-        </div>
-
-        <div class="contain-check">
-          <input id="mod" class="check-type" type="checkbox" value="Moderada" name="incontinencia"
-            data-seccion="incontinencia" />
-          <label class="tipo" for="mod">Moderada</label>
-        </div>
-
-        <div class="contain-check">
-          <input id="fuerte" class="check-type" type="checkbox" value="Fuerte" name="incontinencia"
-            data-seccion="incontinencia" />
-          <label class="tipo" for="fuerte">Fuerte</label>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <h4 class="title-h4">TALLE</h4>
-
-      <div class="seccion seccion-flex">
-        <div class="contain-check">
-          <input id="med" class="check-type" type="checkbox" value="M" name="talle" data-seccion="talle" />
-          <label class="tipo" for="med">P/M</label>
-        </div>
-
-        <div class="contain-check">
-          <input id="grande" class="check-type" type="checkbox" value="G" name="talle" data-seccion="talle" />
-          <label class="tipo" for="grande">M/G</label>
-        </div>
-
-        <div class="contain-check">
-          <input id="xgrande" class="check-type" type="checkbox" value="XG" name="talle" data-seccion="talle" />
-          <label class="tipo" for="xgrande">G/XG</label>
-        </div>
-      </div>
-    </div>
-
-    <div class="cont-btn">
-      <button id="enviarBtn" type="submit">CONSULTAR</button>
-    </div>
-
-    <div id="error"></div>
-  </form>
-
-  <div id="resultado">
-    <div class="contain-msg">
-      <h3 class="title-producto">¡Gracias por realizar nuestra encuesta de satifacción sobre incontinencias!.</h3>
-      <span>En las proximas horas nos contactaremos con vos para finalizar tu suscripción.</span>
-      <span>Según tus necesidades, nuestro producto recomendado para vos es:</span>
-    </div>
-    
-    <div id="productoRecomendado"></div>
-
-    <button id="home" class="btn-volver"><a class="btn-volver-a" href="/index.html">VOLVER</a></button>
   </div>
 
   <div class="footer">

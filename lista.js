@@ -1,21 +1,30 @@
+// const URLlista = "http://127.0.0.1:8080/todo";
+const URLlista = "https://suscripciones-encuesta-back.onrender.com/todo";
+
 // Conecto con API
-fetch("https://suscripciones-encuesta-back.onrender.com/todo")
+fetch(URLlista)
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
 
     const datos = data.map((item) => ({
       ID: item._id,
+
+      Fecha: item.respuesta.fecha,
       Nombre: item.respuesta.nombre,
       Apellido: item.respuesta.apellido,
-      Email: item.respuesta.email,
       Celular: item.respuesta.celular,
-      Titulo: item.producto[0].titulo,
-      EAN: item.producto[0].EAN,
-      Tipo: item.respuesta.tipo,
-      Genero: item.respuesta.genero,
-      Incontinencia: item.respuesta.incontinencia,
-      Talle: item.respuesta.talle,
+      Email: item.respuesta.email,
+
+      Genero: item.respuesta.genero || "",
+      Incontinencia: item.respuesta.incontinencia || "",
+      Talle: item.respuesta.talle || "",
+
+      Suscripcion: item.suscripcion,
+      Titulo: item.producto.titulo,
+      EAN: item.producto.EAN,
+
+      Frecuencia: item.contacto.frecuencia
     }));
 
     mostrarDatosEnPagina(data);
@@ -32,16 +41,23 @@ function mostrarDatosEnPagina(datos) {
   datos.forEach((dato) => {
     const filaHTML = `
   <tr class="columna">
-    <td class="column-small">${dato._id}</td>
+    <td class="column-id">${dato._id}</td>
+
+    <td class="column-small">${dato.respuesta.fecha}</td>
     <td>${dato.respuesta.nombre}</td>
     <td>${dato.respuesta.apellido}</td>
-    <td class="column-email">${dato.respuesta.email}</td>
     <td>${dato.respuesta.celular}</td>
-    <td>${dato.producto[0].EAN}</td>
-    <td>${dato.respuesta.tipo}</td>
+    <td class="column-email">${dato.respuesta.email}</td>
+
     <td>${dato.respuesta.genero}</td>
     <td>${dato.respuesta.incontinencia}</td>
     <td class="column-small">${dato.respuesta.talle}</td>
+
+    <td>${dato.suscripcion}</td>
+    <td class="column-email">${dato.producto.titulo}</td>
+    <td>${dato.producto.EAN}</td>
+
+    <td>${dato.contacto.frecuencia}</td>
   </tr>
 `;
 
