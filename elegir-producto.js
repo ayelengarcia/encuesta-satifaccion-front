@@ -1,8 +1,8 @@
 const PRODUCTOS = [];
-// const URLproductos = "http://127.0.0.1:8080/todo/productos";
-// const URLlista = "http://127.0.0.1:8080/todo";
-const URLproductos = "https://suscripciones-encuesta-back.onrender.com/todo/productos";
-const URLlista = "https://suscripciones-encuesta-back.onrender.com/todo";
+const URLproductos = "http://127.0.0.1:8080/todo/productos";
+const URLlista = "http://127.0.0.1:8080/todo";
+// const URLproductos = "https://suscripciones-encuesta-back.onrender.com/todo/productos";
+// const URLlista = "https://suscripciones-encuesta-back.onrender.com/todo";
 
 const containerRecomendados2 = document.getElementById(
   "container-recomendados2"
@@ -47,7 +47,6 @@ fetch(URLproductos)
 
         // Obtener datos para contacto
         const frecuencia = document.getElementById("frecuencia").value;
-
         const contactoRta = {
           frecuencia,
         };
