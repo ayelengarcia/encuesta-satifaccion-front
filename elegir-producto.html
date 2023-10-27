@@ -1,104 +1,258 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elegir producto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script defer src="/elegir-producto.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elegir producto</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
-  <script defer src="/elegir-producto.js"></script>
-</head>
-
-<body>
-
-  <div class="header">
-    <div class="msg-top">
-      <p class="text-msg-top">Buenos Aires, Argentina</p>
-    </div>
-    <div class="contenido-header">
-      <a class="logo-central-a" href="https://www.centraloeste.com.ar/">
-        <img class="logo-central" src="src/icons/centralOeste.png" alt="logo central oeste">
-      </a>
-  
-      <a class="inicio" href="/index.html">
-        <h4 class="inicio-h4">INICIO</h4>
-      </a>
-      
-    </div>
-
-  </div>
-
-  <div class="main">
-
-  <form id="encuestaForm2" class="form-encuesta2">
-
-    <div id="container-recomendados2"></div>
-
-    <div  class="aside2">
-      <h4 class="title-h4">DATOS PERSONALES</h4>
-
-      <div class="seccion-2">
-        <div class="campo-contein">
-          <span class="campo">Nombre completo</span>
-          <div class="form-group">
-            <input class="input-name" type="text" id="nombre" name="nombre" placeholder="Nombre" required />
-          </div>
-
-          <div class="form-group">
-            <input class="input-name" type="text" id="apellido" name="apellido" placeholder="Apellido" required />
-          </div>
-        </div>
-
-        <div class="campo-contein">
-          <span class="campo">Número de celular</span>
-          <div class="form-group">
-            <input class="input-enter" type="number" id="celular" name="celular" placeholder="Ejemplo: 1163589596"
-              required />
-          </div>
-        </div>
-
-        <div class="campo-contein">
-          <span class="campo">Correo electrónico</span>
-          <div class="form-group">
-            <input class="input-enter" type="email" id="email" name="email" placeholder="usuario@ejemplo.com"
-              required />
-          </div>
-        </div>
+  <body>
+    <div class="header">
+      <div class="msg-top">
+        <p class="text-msg-top">Buenos Aires, Argentina</p>
       </div>
+      <div class="contenido-header">
+        <a class="logo-central-a" href="https://www.centraloeste.com.ar/">
+          <img
+            class="logo-central"
+            src="src/icons/centralOeste.png"
+            alt="logo central oeste"
+          />
+        </a>
 
-    </div>
-
-    <div class="seccion-contacto">
-
-      <div class="contain-pregunta">
-        <span class="campo">¿Con qué frecuencia querés recibirlo?</span>
-        
-        <select id="frecuencia" class="selects" name="Frecuencia">
-          <option value="15dias" selected>Cada 15 días</option>
-          <option value="30dias">Cada 30 días</option>
-        </select>
+        <a class="inicio" href="/index.html">
+          <h4 class="inicio-h4">INICIO</h4>
+        </a>
       </div>
-
     </div>
 
-    <div class="cont-btn-product">
-      <button id="capturarValores" class="btn-volver" type="submit">SUSCRIBIRME</button>
-      <a href="#" class="sinSuscripcion">Comprar sin suscripción</a>
+    <div class="main">
+      <form id="encuestaForm2" class="form-encuesta2">
+        <div class="contain-msg">
+          <span class="p-msg"
+            >¡Seleccioná un producto deseado para suscribirte con una OFERTA
+            EXCLUSIVA!</span
+          >
+        </div>
+        <div id="container-recomendados2"></div>
+
+        <div class="aside2">
+          <h4 class="title-h4">DATOS PERSONALES</h4>
+
+          <div class="seccion-2">
+            <div class="campo-contein">
+              <div class="form-group">
+                <input
+                  class="input-name"
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Ingresá tu Nombre"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  class="input-name"
+                  type="text"
+                  id="apellido"
+                  name="apellido"
+                  placeholder="Ingresá tu Apellido"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="campo-contein">
+              <div class="form-group">
+                <input
+                  class="input-enter"
+                  type="number"
+                  id="celular"
+                  name="celular"
+                  placeholder="Celular: 1163589596"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  class="input-enter"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Correo electrónico"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="campo-contein">
+              <div class="form-group">
+                <input
+                  class="input-enter"
+                  type="number"
+                  id="dni"
+                  name="dni"
+                  placeholder="Ingresá tu DNI"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <select
+                  id="localidad"
+                  class="input-enter"
+                  name="localidad"
+                  required
+                >
+                  <option value="" disabled selected>Seleccioná tu provincia</option>
+                  <option value="Buenos Aires">Buenos Aires</option>
+                  <option value="CABA">Ciudad Autónoma de Buenos Aires</option>
+                  <option value="Catamarca">Catamarca</option>
+                  <option value="Chaco">Chaco</option>
+                  <option value="Chubut">Chubut</option>
+                  <option value="Cordoba">Córdoba</option>
+                  <option value="Corrientes">Corrientes</option>
+                  <option value="Entre Rios">Entre Ríos</option>
+                  <option value="Formosa">Formosa</option>
+                  <option value="Jujuy">Jujuy</option>
+                  <option value="La Pampa">La Pampa</option>
+                  <option value="La Rioja">La Rioja</option>
+                  <option value="Mendoza">Mendoza</option>
+                  <option value="Misiones">Misiones</option>
+                  <option value="Neuquen">Neuquén</option>
+                  <option value="Rio Negro">Río Negro</option>
+                  <option value="Salta">Salta</option>
+                  <option value="San Juan">San Juan</option>
+                  <option value="San Luis">San Luis</option>
+                  <option value="Santa Cruz">Santa Cruz</option>
+                  <option value="Santa Fe">Santa Fe</option>
+                  <option value="Santiago del Estero">
+                    Santiago del Estero
+                  </option>
+                  <option value="Tierra del Fuego">Tierra del Fuego</option>
+                  <option value="Tucumán">Tucumán</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="campo-contein">
+              <div class="form-group">
+                <input
+                  class="input-enter"
+                  type="text"
+                  id="calle"
+                  name="calle"
+                  placeholder="Calle"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  class="input-enter"
+                  type="number"
+                  id="altura"
+                  name="altura"
+                  placeholder="Altura"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="campo-contein">
+              <div class="form-group">
+                <input
+                  class="input-enter"
+                  type="text"
+                  id="piso"
+                  name="piso"
+                  placeholder="Piso"
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  class="input-enter"
+                  type="number"
+                  id="CP"
+                  name="CP"
+                  placeholder="Código Postal"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="seccion-contacto">
+          <div class="contain-pregunta">
+            <span class="campo">¿Con qué frecuencia querés recibirlo?</span>
+
+            <select id="frecuencia" class="selects" name="Frecuencia">
+              <option value="15dias" selected>Cada 15 días</option>
+              <option value="30dias">Cada 30 días</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="cont-btn-product">
+          <button id="capturarValores" class="btn-volver" type="submit">
+            SUSCRIBIRME
+          </button>
+          <a href="#" class="sinSuscripcion">Comprar sin suscripción</a>
+        </div>
+
+        <div id="error"></div>
+      </form>
     </div>
 
-    <div id="error"></div>
-  </form>
+    <div class="footer">
+      <span>✉ ecommerce@centraloeste.com</span>
+      <span class="copy"
+        >Central Oeste © 2023 | Reservados todos los derechos</span
+      >
+    </div>
 
-  </div>
+    <div class="container-modal d-flex">
+      <div id="modal" class="modalFin d-flex">
+        <h2 class="title-modal">¡GRACIAS POR TU SUSCRIPCIÓN!</h2>
+        <div class="contain-parrafo-modal">
+          <p class="parrafo-modal">
+            Te contactaremos por whatsapp en las próximas 24hs
+          </p>
+          <p class="parrafo-modal">para finalizar tu suscripción.</p>
+        </div>
 
-  <div class="footer">
-    <span>✉ ecommerce@centraloeste.com</span>
-    <span class="copy">Central Oeste © 2023 | Reservados todos los derechos</span>
-  </div>
-  
-</body>
+        <p class="parrafo-redirect">
+          Serás redirigido en <span class="tiempoRedireccion"></span>
+        </p>
+      </div>
+    </div>
 
+    <div id="scrollButton">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        fill="currentColor"
+        class="arrow"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"
+        />
+      </svg>
+    </div>
+  </body>
 </html>

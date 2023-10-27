@@ -5,9 +5,41 @@ const URLlista = "http://127.0.0.1:8080/todo";
 fetch(URLlista)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+    //filtra solo los que contengan suscripcion="SI"
+    const datosConSuscripcionSI = data.filter(
+      (item) => item.suscripcion === "SI"
+    );
 
-    const datos = data.map((item) => ({
+    // Obtiene la fecha actual en el mismo formato que se encuentra en los datos
+    const now = new Date();
+
+    const currentFormattedDate = `${now
+      .getDate()
+      .toString()
+      .padStart(2, "0")}/${(now.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}/${now.getFullYear().toString()}`;
+
+    // Filtra los datos para obtener solo aquellos con la fecha actual
+    const datosFechaActual = data.filter((item) => {
+      const itemFormattedDate = item.respuesta.fecha.split(" ")[0];
+      return itemFormattedDate === currentFormattedDate;
+    });
+
+    // Define un conjunto para almacenar los números de pedido utilizados
+    const numerosDePedidoUtilizados = new Set();
+
+    // Función para generar números de pedido únicos
+    function generarNumeroPedidoUnico() {
+      let numeroPedido = 1;
+      while (numerosDePedidoUtilizados.has(numeroPedido.toString().padStart(3, "0"))) {
+        numeroPedido++;
+      }
+      numerosDePedidoUtilizados.add(numeroPedido.toString().padStart(3, "0"));
+      return numeroPedido.toString().padStart(3, "0");
+    }
+
+    const datosContacto = data.map((item) => ({
       ID: item._id,
 
       Fecha: item.respuesta.fecha,
@@ -24,11 +56,51 @@ fetch(URLlista)
       Titulo: item.producto.titulo,
       EAN: item.producto.EAN,
 
-      Frecuencia: item.contacto.frecuencia
+      Frecuencia: item.contacto.frecuencia,
     }));
 
-    mostrarDatosEnPagina(data);
-    descargarCSV(datos);
+    const datosPedidos = datosConSuscripcionSI.map((item) => ({
+      idPedido: generarNumeroPedidoUnico(),
+
+      fechaCreacion: item.respuesta.fecha,
+      nombreFactura: item.respuesta.nombre,
+      apellidoFactura: item.respuesta.apellido,
+      dniFactura: item.contacto.dni,
+      telefonoFactura: "",
+      dirCalleFactura: item.contacto.calle,
+      dirNroFactura: item.contacto.altura,
+      dirPisoFactura: item.contacto.piso,
+      dirCPFactura: item.contacto.CP,
+      email: "",
+      nombreRetiro: "",
+      apellidoRetiro: "",
+      dniRetiro: "",
+      telefonoRetiro: "",
+      idSucursal: 84,
+      codigoProducto: item.producto.EAN,
+      precioBase: "",
+      precioCompra: "",
+      cantidad: "",
+      descuentoItem: item.producto.descuento,
+      precioFacturado: "",
+      importeTotal: "",
+      medioPago: "mercadopago_fco",
+      costoFinanciero: 0,
+      costoEnvio: 0,
+      localidad: item.contacto.localidad,
+      cuotas: 1,
+      creditCard: "",
+      metododeenvio: "mercadoEnvio",
+      cupon: "",
+      canal: 10,
+      observaciones: "#2000004919844713",
+      entregaFull: 2,
+      item: 0,
+    }));
+
+    mostrarDatosEnPagina(datosFechaActual);
+    descargarCSV(datosContacto);
+    descargarCSVpedidos(datosPedidos);
   })
   .catch((error) => {
     console.error("Error al obtener datos del servidor:", error);
@@ -43,7 +115,7 @@ function mostrarDatosEnPagina(datos) {
   <tr class="columna">
     <td class="column-id">${dato._id}</td>
 
-    <td class="column-small">${dato.respuesta.fecha}</td>
+    <td>${dato.respuesta.fecha}</td>
     <td>${dato.respuesta.nombre}</td>
     <td>${dato.respuesta.apellido}</td>
     <td>${dato.respuesta.celular}</td>
@@ -79,19 +151,38 @@ function convertirA_CSV(datos) {
   return filas.join("\n");
 }
 
-// Función para descargar el archivo CSV
+// Función para descargar el archivo CSV para contacto.
 function descargarCSV(data) {
   const contenidoCSV = convertirA_CSV(data).replace(/,/g, ";");
 
-  const blob = new Blob([contenidoCSV], { type: "text/csv;charset=utf-8" });
+  const blob = new Blob([contenidoCSV], {
+    type: "text/csv;charset=utf-8",
+  });
   const url = URL.createObjectURL(blob);
 
-  
   const a = document.createElement("a");
   a.href = url;
-  a.download = "datos.csv";
-  a.textContent = "Descargar CSV";
+  a.download = "datosContacto.csv";
+  a.textContent = "Descargar CSV contacto";
 
   const btnDescargar = document.getElementById("descargar");
+  btnDescargar.appendChild(a);
+}
+
+// Función para descargar el archivo CSV para pedidos
+function descargarCSVpedidos(data) {
+  const contenidoCSV = convertirA_CSV(data).replace(/,/g, ";");
+
+  const blob = new Blob([contenidoCSV], {
+    type: "text/csv;charset=utf-8",
+  });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "datosPedido.csv";
+  a.textContent = "Descargar CSV pedidos";
+
+  const btnDescargar = document.getElementById("descargarPedidos");
   btnDescargar.appendChild(a);
 }
