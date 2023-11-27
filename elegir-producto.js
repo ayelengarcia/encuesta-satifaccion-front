@@ -1,9 +1,9 @@
 const PRODUCTOS = [];
-const URLproductos = "http://127.0.0.1:8080/todo/productos";
-const URLlista = "http://127.0.0.1:8080/todo";
-// const URLproductos =
-//   "https://suscripciones-encuesta-back.onrender.com/todo/productos";
-// const URLlista = "https://suscripciones-encuesta-back.onrender.com/todo";
+// const URLproductos = "http://127.0.0.1:8080/todo/productos";
+// const URLlista = "http://127.0.0.1:8080/todo";
+ const URLproductos =
+   "https://suscripciones-encuesta-back.onrender.com/todo/productos";
+ const URLlista = "https://suscripciones-encuesta-back.onrender.com/todo";
 
 const containerRecomendados2 = document.getElementById(
   "container-recomendados2"
@@ -149,7 +149,7 @@ const returnProducto = (producto) => {
             <h6 class="dinamica ${dinamicaColorClass}">% ${producto.descuento} OFF</h6>
             <p class="margen size-tipo">${producto.tipo}</p>
             <p class="margen size-description">${producto.descripción}</p>
-            
+
             <div class="contenedor-select-product">
               <input id="${producto._id}" class="check-select-product input-seleccionar2" type="radio" value="${producto.EAN}" name="producto" data-seccion="producto"/>
               <label class="mi-producto" for="${producto._id}">Seleccionar</label>

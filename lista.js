@@ -1,5 +1,5 @@
-const URLlista = "http://127.0.0.1:8080/todo";
-// const URLlista = "https://suscripciones-encuesta-back.onrender.com/todo";
+// const URLlista = "http://127.0.0.1:8080/todo";
+const URLlista = "https://suscripciones-encuesta-back.onrender.com/todo";
 
 // Conecto con API
 fetch(URLlista)
