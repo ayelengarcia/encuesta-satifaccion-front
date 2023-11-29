@@ -7,7 +7,7 @@ const containerRecomendados2 = document.getElementById(
 );
 const encuestaForm2 = document.getElementById("encuestaForm2");
 const error = document.getElementById("error");
-
+const btn_cerrar = document.querySelector(".btn-cerrar")
 const modalFin = document.querySelector(".modalFin");
 const containerModal = document.querySelector(".container-modal");
 containerModal.classList.remove("d-flex");
@@ -103,7 +103,7 @@ fetch(URLproductos)
             modalFin.classList.add("show");
             containerModal.classList.add("show");
 
-            actualizarCuentaRegresiva();
+            limpiarFormulario();
           })
           .catch((error) => console.error("Error al enviar los datos:", error));
       } else {
@@ -112,17 +112,22 @@ fetch(URLproductos)
     });
   });
 
-// Función redirigir y cuenta regresiva
-function actualizarCuentaRegresiva() {
-  tiempoRedireccionElement.textContent = ` ${segundosRestantes}s`;
-  segundosRestantes--;
+  //Cerrar modal
+  btn_cerrar.addEventListener("click", ()=> {
+    modalFin.classList.remove("d-flex");
+    containerModal.classList.remove("d-flex");
+    modalFin.classList.add("d-none");
+    containerModal.classList.add("d-none");
+  })
 
-  if (segundosRestantes >= 0) {
-    setTimeout(actualizarCuentaRegresiva, 1000);
-  } else {
-    window.location.href = "https://www.centraloeste.com.ar/";
+  //limpiar form
+  function limpiarFormulario() {
+    const inputs = document.querySelectorAll(".limpiar");
+  
+    inputs.forEach(input => {
+      input.value = "";
+  });
   }
-}
 
 // RECORRER OBJETOS
 const recorrerObjetos = (array, template, contenedor) => {
@@ -170,12 +175,11 @@ function capturarValores() {
 const button = document.getElementById("scrollButton");
 let isAtBottom = false;
 
+// Arrow top/bottom
 button.addEventListener("click", () => {
   if (isAtBottom) {
-    // Cuando estamos en la parte inferior, llevamos de vuelta arriba
     window.scrollTo({ top: 0, behavior: "smooth" });
   } else {
-    // Cuando estamos en la parte superior, llevamos abajo
     window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
   }
 });

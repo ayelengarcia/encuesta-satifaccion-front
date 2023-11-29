@@ -1,6 +1,6 @@
 const PRODUCTOS = [];
- const URLproductos = "https://suscripcionesbackendrailway-production.up.railway.app/todo/productos";
- const URLlista = "https://suscripcionesbackendrailway-production.up.railway.app/todo";
+const URLproductos = "https://suscripcionesbackendrailway-production.up.railway.app/todo/productos";
+const URLlista = "https://suscripcionesbackendrailway-production.up.railway.app/todo";
 const containerRecomendados = document.getElementById("container-recomendados");
 const encuestaForm = document.getElementById("encuestaForm");
 const resultado = document.getElementById("resultado");
@@ -8,6 +8,7 @@ const enviarBtn = document.getElementById("enviarBtn");
 const secciones = document.querySelectorAll(".seccion");
 const error = document.getElementById("error");
 const errorP = document.getElementById("errorP");
+const btn_cerrar = document.querySelector(".btn-cerrar");
 resultado.classList.add("d-none");
 
 const btnCapturarValores = document.getElementById("capturarValores");
@@ -94,12 +95,12 @@ fetch(URLproductos)
 
       // Enviar datos para crear la lista
       fetch(URLlista, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(datosCompletos),
-      })
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(datosCompletos),
+        })
         .then((response) => response.json())
         .then((response) => {
           const idLista = response._id;
@@ -144,12 +145,12 @@ fetch(URLproductos)
 
                 // Solicitud PUT para actualizar la respuesta existente
                 fetch(URLlista + "/" + idLista, {
-                  method: "PUT",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify(datosCompletos2),
-                })
+                    method: "PUT",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(datosCompletos2),
+                  })
                   .then((response) => response.json())
                   .then(() => {
                     modalFin.classList.add("d-flex");
@@ -165,7 +166,6 @@ fetch(URLproductos)
                     modalFin.classList.add("show");
                     containerModal.classList.add("show");
 
-                    actualizarCuentaRegresiva();
                     limpiarFormulario();
                   })
                   .catch((error) => {
@@ -196,22 +196,22 @@ fetch(URLproductos)
   })
   .then(() => encuestaForm.reset());
 
+
+//Cerrar modal
+btn_cerrar.addEventListener("click", () => {
+  modalFin.classList.remove("d-flex");
+  containerModal.classList.remove("d-flex");
+  modalFin.classList.add("d-none");
+  containerModal.classList.add("d-none");
+})
+
+//limpiar formulario
 function limpiarFormulario() {
-  const inputs = document.querySelector(".input-contacto");
+  const inputs = document.querySelectorAll(".limpiar");
 
-  inputs.value = "";
-}
-
-// Función redirigir y cuenta regresiva
-function actualizarCuentaRegresiva() {
-  tiempoRedireccionElement.textContent = ` ${segundosRestantes}s`;
-  segundosRestantes--;
-
-  if (segundosRestantes >= 0) {
-    setTimeout(actualizarCuentaRegresiva, 1000);
-  } else {
-    window.location.href = "https://www.centraloeste.com.ar/";
-  }
+  inputs.forEach(input => {
+    input.value = "";
+  });
 }
 
 // Funcion condicional para envio del form
@@ -325,10 +325,16 @@ let isAtBottom = false;
 button.addEventListener("click", () => {
   if (isAtBottom) {
     // Cuando estamos en la parte inferior, llevamos de vuelta arriba
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   } else {
     // Cuando estamos en la parte superior, llevamos abajo
-    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    });
   }
 });
 
