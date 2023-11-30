@@ -688,11 +688,7 @@ td {
   text-align: center;
 }
 
-.negrita{
-  margin-left: 5px;
-}
-
-.cerrar-modal{
+.cerrar-modal {
   width: 100%;
   display: flex;
   justify-content: end;
@@ -700,7 +696,7 @@ td {
   margin: 20px 25px 0px 0px;
 }
 
-.cerrar-modal >p{
+.cerrar-modal > p {
   cursor: pointer;
   color: white;
   height: fit-content;
@@ -788,11 +784,10 @@ td {
   #modal {
     width: 60%;
   }
-  
+
   .title-modal {
     font-size: 1.5rem;
   }
-  
 }
 
 @media (min-width: 1360px) {
