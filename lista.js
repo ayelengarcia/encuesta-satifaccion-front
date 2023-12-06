@@ -84,7 +84,7 @@ fetch(URLlista)
         telefonoRetiro: item.respuesta.celular,
         idSucursal: 84,
         codigoProducto: item.producto.EAN,
-        precioBase: 5,
+        precioBase: 0,
         precioCompra: `=R${filaCompra}`,
         cantidad: 1,
         descuentoItem: 0,
