@@ -58,44 +58,52 @@ fetch(URLlista)
       Frecuencia: item.contacto.frecuencia,
     }));
 
-    const datosPedidos = datosConSuscripcionSI.map((item) => ({
-      idPedido: generarNumeroPedidoUnico(),
+    let contador = 2;
 
-      fechaCreacion: item.respuesta.fecha,
-      nombreFactura: item.respuesta.nombre,
-      apellidoFactura: item.respuesta.apellido,
-      dniFactura: item.contacto.dni,
-      telefonoFactura: item.respuesta.celular,
-      dirCalleFactura: item.contacto.calle,
-      dirNroFactura: item.contacto.altura,
-      dirPisoFactura: item.contacto.piso,
-      dirCPFactura: item.contacto.CP,
-      email: item.respuesta.email,
-      nombreRetiro: item.respuesta.nombre,
-      apellidoRetiro: item.respuesta.apellido,
-      dniRetiro: item.contacto.dni,
-      telefonoRetiro: item.respuesta.celular,
-      idSucursal: 84,
-      codigoProducto: item.producto.EAN,
-      precioBase: "",
-      precioCompra: "",
-      cantidad: 1,
-      descuentoItem: 0,
-      precioFacturado: "",
-      importeTotal: "",
-      medioPago: "mercadopago_fco",
-      costoFinanciero: 0,
-      costoEnvio: 0,
-      localidad: item.contacto.localidad,
-      cuotas: 1,
-      creditCard: "",
-      metododeenvio: "mercadoEnvio",
-      cupon: "",
-      canal: 10,
-      observaciones: "#2000004919844713",
-      entregaFull: 2,
-      item: 0,
-    }));
+    const datosPedidos = datosConSuscripcionSI.map((item) => {
+      const filaCompra = contador;
+      const filaFacturado = contador;
+
+      contador++;
+      return {
+        idPedido: generarNumeroPedidoUnico(),
+
+        fechaCreacion: item.respuesta.fecha,
+        nombreFactura: item.respuesta.nombre,
+        apellidoFactura: item.respuesta.apellido,
+        dniFactura: item.contacto.dni,
+        telefonoFactura: item.respuesta.celular,
+        dirCalleFactura: item.contacto.calle,
+        dirNroFactura: item.contacto.altura,
+        dirPisoFactura: item.contacto.piso,
+        dirCPFactura: item.contacto.CP,
+        email: item.respuesta.email,
+        nombreRetiro: item.respuesta.nombre,
+        apellidoRetiro: item.respuesta.apellido,
+        dniRetiro: item.contacto.dni,
+        telefonoRetiro: item.respuesta.celular,
+        idSucursal: 84,
+        codigoProducto: item.producto.EAN,
+        precioBase: 5,
+        precioCompra: `=R${filaCompra}`,
+        cantidad: 1,
+        descuentoItem: 0,
+        precioFacturado: `=R${filaFacturado}*T${filaFacturado}`,
+        importeTotal: `=R${filaFacturado}*T${filaFacturado}`,
+        medioPago: "mercadopago_fco",
+        costoFinanciero: 0,
+        costoEnvio: 0,
+        localidad: item.contacto.localidad,
+        cuotas: 1,
+        creditCard: "",
+        metododeenvio: "mercadoEnvio",
+        cupon: "",
+        canal: 10,
+        observaciones: "#2000004919844713",
+        entregaFull: 2,
+        item: 0,
+      }
+    });
 
     mostrarDatosEnPagina(datosFechaActual);
     descargarCSV(datosContacto);
